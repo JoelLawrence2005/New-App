@@ -8,23 +8,24 @@ const HomeScreen = ({ navigation }) => {
     <View style={styles.container}>
       <Text style={styles.title}>Learn</Text>
       <Text style={styles.subtitle}>Dictionary & Phrasebook</Text>
-      <ScrollView 
+      <ScrollView
         contentContainerStyle={styles.scrollContainer}
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
-        style={styles.scrollView}  // Added style for the ScrollView itself
+        style={styles.scrollView}
       >
         <View style={styles.grid}>
           {letters.map((letter) => (
-            <Pressable 
+            <Pressable
               key={letter}
               onPress={() => navigation.navigate("Letter", { letter })}
               style={({ pressed }) => [
                 styles.button,
-                pressed && styles.buttonPressed,
+                pressed && styles.buttonPressed, // Add the pressed style here
               ]}
             >
-              <Text style={style.buttonText}>{letter}</Text>
+              {/* Corrected line: changed 'style' to 'styles' */}
+              <Text style={styles.buttonText}>{letter}</Text>
             </Pressable>
           ))}
         </View>
@@ -34,38 +35,38 @@ const HomeScreen = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  container: { 
-    flex: 1, 
-    backgroundColor: "#f5f5f5", 
-    alignItems: "center", 
-    paddingTop: 30 
+  container: {
+    flex: 1,
+    backgroundColor: "#f5f5f5",
+    alignItems: "center",
+    paddingTop: 30,
   },
-  title: { 
-    fontSize: 32, 
-    fontWeight: "bold", 
-    color: "#0A369D" 
+  title: {
+    fontSize: 32,
+    fontWeight: "bold",
+    color: "#0A369D",
   },
-  subtitle: { 
-    fontSize: 16, 
-    color: "#555", 
-    marginBottom: 20 
+  subtitle: {
+    fontSize: 16,
+    color: "#555",
+    marginBottom: 20,
   },
   scrollView: {
-    flex: 1,  // This makes the ScrollView take all available space
-    width: '100%',  // Ensures full width
+    flex: 1,
+    width: '100%',
   },
-  scrollContainer: { 
-    flexGrow: 1,  // Allows content to expand vertically
-    alignItems: "center", 
-    paddingBottom: 40,  // Increased padding
-    minHeight: '100%',  // Ensures minimum height
+  scrollContainer: {
+    flexGrow: 1,
+    alignItems: "center",
+    paddingBottom: 40,
+    minHeight: '100%',
   },
-  grid: { 
-    flexDirection: "row", 
-    flexWrap: "wrap", 
-    justifyContent: "center", 
+  grid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
     width: "90%",
-    paddingBottom: 40,  // Added padding at bottom
+    paddingBottom: 40,
   },
   button: {
     backgroundColor: "#172937",
@@ -75,10 +76,14 @@ const styles = StyleSheet.create({
     width: "25%",
     alignItems: "center",
   },
-  buttonText: { 
-    color: "#79dd09", 
-    fontSize: 20, 
-    fontWeight: "bold" 
+  // Added the buttonPressed style for the translucent effect
+  buttonPressed: {
+    backgroundColor: "rgba(23, 41, 55, 0.7)", // Translucent version of original color
+  },
+  buttonText: {
+    color: "#79dd09",
+    fontSize: 20,
+    fontWeight: "bold",
   },
 });
 
