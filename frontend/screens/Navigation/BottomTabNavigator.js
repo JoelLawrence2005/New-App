@@ -9,8 +9,6 @@ import { useNavigation } from '@react-navigation/native'; // Import useNavigatio
 import HomeStackNavigator from './HomeStackNavigator'; // We'll create this
 import PhrasebookScreen from '../SignLanguagePraseBook/SignLanguagePhraseBookScreen'; // Create this screen
 import DictionaryScreen from '../SignLanguageDictionary/SignLanguageDictionaryScreen'; // Create this screen
-import LeaderboardScreen from '../Leaderboard/LeaderBoardScreen'; // Create this screen
-import ProfileScreen from '../Profile/ProfileScreen'; // Create this screen
 
 const Tab = createBottomTabNavigator();
 
@@ -90,8 +88,6 @@ const BottomTabNavigator = () => {
       />
       
       <Tab.Screen name="Dictionary" component={DictionaryScreen} />
-      <Tab.Screen name="Leaderboard" component={LeaderboardScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
   );
 };

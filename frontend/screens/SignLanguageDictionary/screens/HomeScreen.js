@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from "react-native";
+import { View, Text, TouchableOpacity, Pressable, StyleSheet, ScrollView } from "react-native";
 
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
@@ -16,13 +16,16 @@ const HomeScreen = ({ navigation }) => {
       >
         <View style={styles.grid}>
           {letters.map((letter) => (
-            <TouchableOpacity
+            <Pressable 
               key={letter}
-              style={styles.button}
               onPress={() => navigation.navigate("Letter", { letter })}
+              style={({ pressed }) => [
+                styles.button,
+                pressed && styles.buttonPressed,
+              ]}
             >
-              <Text style={styles.buttonText}>{letter}</Text>
-            </TouchableOpacity>
+              <Text style={style.buttonText}>{letter}</Text>
+            </Pressable>
           ))}
         </View>
       </ScrollView>
