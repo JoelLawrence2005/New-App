@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "frontend",
+    "slug": "frontend",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/SignIn_and_other_Images/logo.jpg",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "bundle":"metro",
+      "output":"single",
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}

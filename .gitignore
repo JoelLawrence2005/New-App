@@ -1,0 +1,34 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# React Native
+*.log
+*.lock
+*.tmp
+*.temp
+*.swp
+*.swo
+*.DS_Store
+.expo/
+.expo-shared/
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+*.env.*
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
